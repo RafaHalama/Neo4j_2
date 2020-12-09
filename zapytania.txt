@@ -20,7 +20,7 @@ match (a1:Airport)<-[:ORIGIN]-(f1:Flight)-[]->(a2: Airport),
 MERGE (a1)-[:ECONOMIC_FLIGHT {price: t1.price}]->(a2)
 
 match (a1:Airport)<-[:ORIGIN]-(f1:Flight)-[]->(a2: Airport),
-		(f)-[]-(t1:Ticket {class: "firstClass"})
+		(f1)-[]-(t1:Ticket {class: "firstClass"})
 MERGE (a1)-[:FIRST_CLASS_FLIGHT {price: t1.price}]->(a2)
 
 match (a1:Airport)<-[:ORIGIN]-(f1:Flight)-[]->(a2: Airport),
