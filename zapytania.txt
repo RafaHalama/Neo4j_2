@@ -51,9 +51,8 @@ return p, reduce(s=0, r in relationships(p) | s + r.price) as total
 ORDER BY total LIMIT 1
 
 -------------------------------------9----------------------------------------
-match p = (f1:Flight)-[:ORIGIN]->(a2:Airport)<-[:DESTINATION]-(f2:Flight)
-where f1.airline = f2.airline
-return f1.airline as airline, size(collect(distinct a2)) as number , collect(distinct a2) as airports
+match p = (a1:Airport)<-[]-(f1:Flight)
+return f1.airline as airline, size(collect(distinct a1)) as number, collect(distinct a1)
 
 -------------------------------------10----------------------------------------
 match p = (a1:Airport)-[f1]->(a2:Airport)-[f2]->(a3:Airport)
