@@ -1,0 +1,202 @@
+﻿[
+  {
+    "airport": "SAT",
+    "origin": 1
+  },
+  {
+    "airport": "FLL",
+    "origin": 1
+  },
+  {
+    "airport": "KOA",
+    "origin": 1
+  },
+  {
+    "airport": "SMF",
+    "origin": 1
+  },
+  {
+    "airport": "RIC",
+    "origin": 1
+  },
+  {
+    "airport": "IND",
+    "origin": 1
+  },
+  {
+    "airport": "MCI",
+    "origin": 1
+  },
+  {
+    "airport": "MSN",
+    "origin": 1
+  },
+  {
+    "airport": "BIL",
+    "origin": 1
+  },
+  {
+    "airport": "ROC",
+    "origin": 1
+  },
+  {
+    "airport": "CLT",
+    "origin": 1
+  },
+  {
+    "airport": "DCA",
+    "origin": 1
+  },
+  {
+    "airport": "PBI",
+    "origin": 1
+  },
+  {
+    "airport": "MIA",
+    "origin": 1
+  },
+  {
+    "airport": "MOB",
+    "origin": 1
+  },
+  {
+    "airport": "SNA",
+    "origin": 2
+  },
+  {
+    "airport": "LAS",
+    "origin": 2
+  },
+  {
+    "airport": "ATL",
+    "origin": 2
+  },
+  {
+    "airport": "CMH",
+    "origin": 2
+  },
+  {
+    "airport": "SJC",
+    "origin": 2
+  },
+  {
+    "airport": "LGA",
+    "origin": 2
+  },
+  {
+    "airport": "TUS",
+    "origin": 2
+  },
+  {
+    "airport": "SEA",
+    "origin": 3
+  },
+  {
+    "airport": "PHX",
+    "origin": 3
+  },
+  {
+    "airport": "SBN",
+    "origin": 3
+  },
+  {
+    "airport": "MCO",
+    "origin": 4
+  },
+  {
+    "airport": "PDX",
+    "origin": 4
+  },
+  {
+    "airport": "BOS",
+    "origin": 4
+  },
+  {
+    "airport": "DFW",
+    "origin": 4
+  },
+  {
+    "airport": "SAN",
+    "origin": 4
+  },
+  {
+    "airport": "BHM",
+    "origin": 4
+  },
+  {
+    "airport": "CVG",
+    "origin": 4
+  },
+  {
+    "airport": "ABQ",
+    "origin": 4
+  },
+  {
+    "airport": "FAT",
+    "origin": 4
+  },
+  {
+    "airport": "DLH",
+    "origin": 4
+  },
+  {
+    "airport": "SLC",
+    "origin": 5
+  },
+  {
+    "airport": "HNL",
+    "origin": 5
+  },
+  {
+    "airport": "FSD",
+    "origin": 5
+  },
+  {
+    "airport": "EWR",
+    "origin": 7
+  },
+  {
+    "airport": "MOT",
+    "origin": 8
+  },
+  {
+    "airport": "MSP",
+    "origin": 9
+  },
+  {
+    "airport": "IAD",
+    "origin": 12
+  },
+  {
+    "airport": "BNA",
+    "origin": 12
+  },
+  {
+    "airport": "AZO",
+    "origin": 13
+  },
+  {
+    "airport": "SFO",
+    "origin": 14
+  },
+  {
+    "airport": "DEN",
+    "origin": 18
+  },
+  {
+    "airport": "LAX",
+    "origin": 22
+  },
+  {
+    "airport": "IAH",
+    "origin": 23
+  },
+  {
+    "airport": "DTW",
+    "origin": 25
+  },
+  {
+    "airport": "ORD",
+    "origin": 48
+  }
+]

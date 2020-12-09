@@ -1,0 +1,65 @@
+WERSJA ANGIELSKA ZADAN!!!
+
+-------------------------------------1----------------------------------------
+match p = shortestPath((:town {name: 'Darjeeling'})-[*]->(:peak {name: 'Sandakphu'})) WHERE ALL (r IN relationships(p) WHERE  (r.winter = 'true'))   return p
+
+-------------------------------------2----------------------------------------
+match p=(n:town{name:'Darjeeling'})-[r*]->(m:peak{name:'Sandakphu'}) return distinct p,REDUCE(s = 0, r IN relationships(p)| s + r.distance) AS total
+
+order by total
+-------------------------------------3----------------------------------------
+match (n:town{name:'Darjeeling'})-[r:twowheeler]->(m) where r.summer ='true'  return n,r,m
+
+-------------------------------------4----------------------------------------
+MATCH p=(f:Flight)-[r:ORIGIN]->(a:Airport) RETURN a.name as airport, count(f) as origin order by origin
+
+
+-------------------------------------5----------------------------------------
+match (a1:Airport)<-[:ORIGIN]-(f1:Flight)-[]->(a2: Airport),
+		(f1)-[]-(t1:Ticket {class: "economy"})
+MERGE (a1)-[ECONOMIC_FLIGHT {price: t1.price}]->(a2)
+
+match (a1:Airport)<-[:ORIGIN]-(f1:Flight)-[]->(a2: Airport),
+		(f)-[]-(t1:Ticket {class: "firstClass"})
+MERGE (a1)-[ECONOMIC_FLIGHT {price: t1.price}]->(a2)
+
+match (a1:Airport)<-[:ORIGIN]-(f1:Flight)-[]->(a2: Airport),
+		(f1)-[]-(t1:Ticket {class: "business"})
+MERGE (a1)-[ECONOMIC_FLIGHT {price: t1.price}]->(a2)
+
+
+match p = (a1:Airport {name: "LAX"})-[*1..2]->(a2:Airport)
+where a2.name <> "LAX"
+with p as p, reduce(s=0, r in relationships(p) | s + r.price) as total
+where total < 3000
+return p, total
+order by total
+
+-------------------------------------6----------------------------------------
+match p = (a1:Airport {name: "LAX"})-[*1..3]->(a2:Airport {name:'DAY'})
+return p, reduce(s=0, r in relationships(p) | s + r.price) as total
+order by total
+
+-------------------------------------7----------------------------------------
+match p = (a1:Airport {name: "LAX"})-[*1..3]->(a2:Airport {name:'DAY'})
+return p, reduce(s=0, r in relationships(p) | s + r.price) as total
+ORDER BY total LIMIT 1
+
+-------------------------------------8----------------------------------------
+match p = (a1:Airport {name: "LAX"})-[:BUSINESS_FLIGHT*1..3]->(a2:Airport {name:'DAY'})
+return p, reduce(s=0, r in relationships(p) | s + r.price) as total
+ORDER BY total LIMIT 1
+
+-------------------------------------9----------------------------------------
+match p = (f1:Flight)-[:ORIGIN]->(a2:Airport)<-[:DESTINATION]-(f2:Flight)
+where f1.airline = f2.airline
+return f1.airline as airline, size(collect(distinct a2)) as number , collect(distinct a2) as airports
+
+-------------------------------------10----------------------------------------
+match p = (a1:Airport)-[f1]->(a2:Airport)-[f2]->(a3:Airport)
+where a1.name <>a3.name
+return a1,f1, a2,f2, a3, reduce(s=0, r in relationships(p) | s + r.price) as total
+ORDER BY total LIMIT 1
+
+
+
