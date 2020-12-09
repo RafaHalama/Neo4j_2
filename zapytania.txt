@@ -17,15 +17,15 @@ MATCH p=(f:Flight)-[r:ORIGIN]->(a:Airport) RETURN a.name as airport, count(f) as
 -------------------------------------5----------------------------------------
 match (a1:Airport)<-[:ORIGIN]-(f1:Flight)-[]->(a2: Airport),
 		(f1)-[]-(t1:Ticket {class: "economy"})
-MERGE (a1)-[ECONOMIC_FLIGHT {price: t1.price}]->(a2)
+MERGE (a1)-[:ECONOMIC_FLIGHT {price: t1.price}]->(a2)
 
 match (a1:Airport)<-[:ORIGIN]-(f1:Flight)-[]->(a2: Airport),
 		(f)-[]-(t1:Ticket {class: "firstClass"})
-MERGE (a1)-[ECONOMIC_FLIGHT {price: t1.price}]->(a2)
+MERGE (a1)-[:FIRST_CLASS_FLIGHT {price: t1.price}]->(a2)
 
 match (a1:Airport)<-[:ORIGIN]-(f1:Flight)-[]->(a2: Airport),
 		(f1)-[]-(t1:Ticket {class: "business"})
-MERGE (a1)-[ECONOMIC_FLIGHT {price: t1.price}]->(a2)
+MERGE (a1)-[:BUSINESS_FLIGHT {price: t1.price}]->(a2)
 
 
 match p = (a1:Airport {name: "LAX"})-[*1..2]->(a2:Airport)
